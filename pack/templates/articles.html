@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Articles!!!!!!!</title>
+    <style type="text/css">
+        div{}
+        .title{
+            font-family: Verdana;
+            background: #F0FFF0	;
+            opacity:0.5;
+        }
+        .article{
+            font:sans-serif;
+            background: #F0FFF0	;
+            opacity:0.5;
+        }
+        h2{
+            margin-left:15px;
+        }
+        h3{
+            margin-left:15px;
+        }
+    </style>
+</head>
+<body style="background:
+url(https://s8.hostingkartinok.com/uploads/images/2020/07/e088249da391292f84a33bc1724b61e6.jpg)">
+<header>
+        <div class="title">
+            <a href="/"><h2>Playful Gardeners</h2></a>
+            <div align="right"><h3>
+                <a href = "{{ url_for('forum') }}">
+                    Forum</a>
+                <a href="{{ url_for('articles') }}">
+                    Articles</a>
+                <a href = "{{ url_for('logout') }}">
+                    Logout</a>
+            </h3></div>
+        </div>
+</header>
+<div style="background:#F0FFF0;opacity:0.5">
+   <h2>Articles</h2>
+</div>
+
+     {% for el in article%}
+        <div class="article">
+            <p>
+                <b>&nbsp;{{ el.title }} </b><br>
+                <i>&nbsp;{{el.intro}}</i> <br>
+                &nbsp;{{el.text}} <br>
+                &nbsp;{{el.date}}<br>
+            </p>
+        </div>
+{% endfor %}
+
+<center>
+<button type="submit"><a href="/add_article"> Add new article</a></button>
+</center>
+</body>
+</html>

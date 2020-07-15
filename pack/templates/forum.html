@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+    <style type="text/css">
+        div{}
+        .forum_msg{
+            font:sans-serif;
+            background: #F0FFF0	;
+            opacity:0.5;
+        }
+        .title{
+            font-family: Verdana;
+            background: #F0FFF0	;
+            opacity:0.5;
+        }
+        h2{
+            margin-left:15px;
+        }
+        h3{
+            margin-left:15px;
+        }
+    </style>
+</head>
+<body style="background:
+url(https://s8.hostingkartinok.com/uploads/images/2020/07/e088249da391292f84a33bc1724b61e6.jpg)">
+    <header>
+        <div class="title">
+            <a href="/"><h2>Playful Gardeners</h2></a>
+            <div align="right"><h3>
+                <a href = "{{ url_for('forum') }}">
+                    Forum</a>
+                <a href="{{ url_for('articles') }}">
+                    Articles</a>
+                <a href = "{{ url_for('logout') }}">
+                    Logout</a>
+            </h3></div>
+        </div>
+    </header>
+    <div class="title" style="width:17%">
+        <h2>Messages</h2>
+    </div>
+    <form method="post" action="/forum">
+         <input type="text" name="text">
+         <button type="submit">Add message</button>
+    </form>
+
+    <div class="title" style="width:17%">
+        <h3>Messages list</h3>
+    </div>
+
+    {% for messages in message %}
+        <div class="forum_msg">
+            <p>
+                {{ messages.text }}&nbsp;<br>
+                <b>@{{ messages.user_cur }}</b>
+            </p>
+        </div>
+    {% endfor %}
+</body>
+</html>

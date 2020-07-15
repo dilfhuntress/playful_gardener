@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<header style="width: 100%;
+    background: #FFFFF0	;
+    opacity:0.5;
+    height: 70px;">
+
+</header>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body style="background:
+url(https://s8.hostingkartinok.com/uploads/images/2020/07/e088249da391292f84a33bc1724b61e6.jpg)">
+<br>
+<div style="background:#F0FFF0;opacity:0.5">
+
+<h1>Registration page</h1>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}</div>
+
+<form method="POST" style="margin:70px;background:#F0FFF0;opacity:0.5;float:left;margin-right:300px;">
+    <table>
+        <tr>
+            <td>Login</td>
+            <td><input type="text" name="login"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>Password confirmation</td>
+            <td><input type="password" name="password2"></td>
+        </tr>
+        <tr>
+        <tr>
+            <td><a href="{{ url_for('login_page') }}">Login</a></td>
+        <td><button type="submit">Send</button></td>
+
+       </tr>
+    </table>
+</form>
+
+
+<img src="https://s8.hostingkartinok.com/uploads/images/2020/07/cd088965b1fe915457499182098219ef.jpg"style="width: 700px">
+</body>
+</html>
